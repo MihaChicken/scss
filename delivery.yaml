@@ -1,0 +1,29 @@
+version: "2017-09-20"
+pipeline:
+  - id: build
+    type: script
+    commands:
+      - desc: Install NODE
+        cmd: |
+          curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+      - desc: Install dependencies
+        cmd: |
+          useradd -ms /bin/bash npm_install_user
+          chown -Rv npm_install_user ./
+          su npm_install_user -c "npm i"
+      - desc: Lint
+        cmd: |
+          npm run lint
+      - desc: Publish
+        cmd: |
+          if [ -z "$CDP_PULL_REQUEST_NUMBER" ]; then
+            echo "Build and publish the application to the npm registry"
+            npm run build
+            cp .npmrc.build .npmrc
+            npm publish
+          else
+            echo "Nothing to publish since this is a PR"
+          fi
+
+

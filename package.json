@@ -1,5 +1,5 @@
 {
-  "name": "fabric-scss",
+  "name": "@fabric-design/scss-legacy",
   "version": "1.0.22",
   "description": "",
   "homepage": "https://fabric-design.github.io/styleguide/#/general/1-intro",
@@ -13,10 +13,10 @@
   "devDependencies": {
     "conventional-github-releaser": "^1.1.12",
     "del": "^3.0.0",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-bump": "^2.7.0",
     "gulp-conventional-changelog": "^1.1.4",
-    "gulp-sass": "^2.3.1",
+    "gulp-sass": "4.0.1",
     "gulp-stylelint": "5.0.0",
     "run-sequence": "^2.1.0",
     "stylelint": "8.2.0",
@@ -48,6 +48,7 @@
   "scripts": {
     "lint": "gulp lint-sass",
     "prestart": "npm install",
+    "build": "gulp build:dist",
     "test": "gulp"
   },
   "stylelint": {
