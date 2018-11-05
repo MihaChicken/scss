@@ -43,6 +43,7 @@
     <li><span class="icon-close-order icon24"></span><span class="text">.icon-close-order</span></li>
     <li><span class="icon-trash-bin icon24"></span><span class="text">.icon-trash-bin</span></li>
     <li><span class="icon-dot-menu icon24"></span><span class="text">.icon-dot-menu</span></li>
+    <li><span class="icon-resend icon24"></span><span class="text">.icon-resend</span></li>
 </ul>
 ## Icon sizes
 Our icons are in general displayed in one of 4 sizes. Those can be 16x16, 24x24, 32x32 or 48x48 pixels.
